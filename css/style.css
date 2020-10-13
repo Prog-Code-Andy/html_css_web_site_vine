@@ -1,0 +1,244 @@
+*, /* обращаюсь ко всем превдо тегам на странице */
+*::after, 
+*::before{
+    box-sizing: border-box;
+}
+
+a { /* обращаемся к ссылкам всем */
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+body { /* прописываем всему body цвет */ 
+    color: #3d3131;
+    font-family: 'Lato', sans-serif; /* подключили шрифт для всего тела */
+    font-size: 16px;
+    line-height: 28px; /* подклучили размер шрифтов для всего текста*/
+    font-weight: 400; /* ширина шрифта */ 
+}
+
+.container{ /* описывает контейнер где маленькие фото */
+    max-width: 1200px; /* максимальная ширина контейнера container */
+    padding: 0 15px; /* отступ с права и с лева */
+    margin: 0 auto; /* для того чтобы контейнер центрировался */
+}
+
+.container-content{
+    max-width: 970px; /* максимальнаяширина контейнера */
+    margin: 0 auto; /* для того чтобы контейнер центрировался */
+}
+
+.title{
+    font-family: Georgia;
+    font-size: 32px;
+    line-height: 38px;
+    align-items: center;
+    color: #4E5665;
+    text-align: center;
+}
+
+.section-line{
+    border-bottom: 1px solid rgba(190, 162, 162, 0.836);
+}
+
+.header__top { /* вешаем на него картинку банер */
+    background-image: url('../images/top-bg.jpg');/* картинка не показалась полностью так как занимала пространства столько сколько в ней контента */
+    height: 100vh; /* займет 100% экрана по шире тоже так как элемент блочный */
+    background-repeat: no-repeat;
+    background-size: cover; /* замастить или растянуть  */
+    background-position: center;/* картинка будет центрироваться относительно места со всех краев */
+    padding: 40px; /* внутрений отступ блока все элементы в нем сжал ровно кординатам*/
+}
+
+.header__top-inner { /* Сделали контейнер для обвертки на фото есть маленькая полоса */
+    border: 2px solid #8C001A; /* обводка и красный цвет оббводки */
+    border-bottom: none; /* Прописывает что бы не было линии рамочки в низу */
+    display: flex; /* Выстраиваем все елементы в один ряд */
+    flex-direction: column; /* свойство , указывающее на то,как flex-элементы располагаются во flex-контейнере по главной оси и направлению (normal или reversed). */
+    height: 100%;
+    color: #fff; /* цвет текста */ 
+    font-family: Georgia; /* прописываем шрифт для ВИНО */
+}
+
+.header__title { /* Дочерний элемент header__top-inner */
+    font-weight: bold;
+    font-size: 200px;
+    line-height: 227px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5); /* взяли данные с фигмы подключили тень */
+    margin: auto; /* надпись вино оттолкнула все стороны и стала в центр */
+}
+
+.header__text { /* дочерний элемент является флекс элементом */
+    font-size: 24px;
+    line-height: 27px;
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+    display: flex; /* прописываем чтобы блок принял немного бругие свойства */
+    white-space: nowrap; /* нельзя тексту переноситься */
+    align-items: center; /* вертикальное центрирования элементов */
+    margin-bottom: -12px; /* отступ линии красной выравнивает ее */
+}
+
+.header__text::after,/* псевдо элементы делаем подчеркивание с низу  */
+.header__text::before {
+    content: ""; /* что бы линии появлялись с лева и с права нужно прописать content */
+    border-top: 2px solid #8C001A; /* линния прописываем снизу с заманчевым цветом */
+    width: 100%; /* прописали after и befor по 100% он расширил и сузил надпись по середине */
+}
+
+.header__text::after { /* сделали отступы от текста под вином красной линии */
+    margin-left: 30px;
+}
+
+.header__text::before {/* сделали отступы от текста под вином красной линии */
+    margin-right: 30px;
+}
+
+/* *********************все данные банера верхнего*********************** */
+
+.menu { /* создаем нилию бордьр с низу */
+    border-bottom: 1px rgba(208, 212, 216, .5);
+}
+
+.menu__list { /* прописываем для всех ul стили */
+    display: flex; /* блоки выставляемм в строки */
+    justify-content: center; /* выровнять контент по центрув */
+    align-items: center;
+    list-style-type: none; /* убираем точки в ul */
+}
+
+.menu__list-link{ /* стилизуем ссылки */
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 24px 10px 20px; /* отступы ссылки */
+    color: #909090; /* цвет ссылки */
+    margin: 0 6px; /* отступы от линии и линков */
+    border-bottom: 4px solid transparent; /* сделали для того чтобы при наведении мыши на меню не прыгал код transparent - это прозрачность */
+    transition: all .5s;/* замедление перемещение курсора */
+}
+
+.menu__list-link:hover{ /* свойства когда наводим курсор будет меняться класс */
+    color: #4E5665; /* досветка при наведении мышы */
+    border-bottom: 4px solid #8C001A;
+}
+
+.reason{ /* стили для всей секции */
+    padding: 80px 0 0; /* отсупы с верху и снизу */
+}
+
+.reason-title{
+    margin-bottom: 22px;
+}
+.raeson__link{ /* перемещаем ссылку в правую сторону */
+    text-align: right;
+}
+.raeson__link a{
+    font-weight: 700;
+    color: #8C001A;
+    margin-bottom: 36px; /* отступ от нижнего края */
+}
+
+.raeson__statistics{ /* ввыранивание блоков с картинками 4 шт */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.raeson__statistics-num{ /* прописываем стили блокам с номерами под катриками блоки под банерами статистики */
+    color: #4E5665;
+    margin-top: 32px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+
+}
+.raeson__statistics-text{ 
+    /* прописываем стили блокам с текстами под катриками блоки под банерами статистики */
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #909090;
+}
+
+.about{
+    padding: 80px 0 0; /* отступы написали для секции about */
+}
+
+.about_title{
+    margin-bottom: 13px;
+}
+
+.about__text{
+    margin-bottom: 72px; /* Отступ между строками текста */
+}
+
+.about__item{
+    margin-bottom: 100px;
+    padding: 70px 0; /* внутрение отступы от текста */ 
+    background-repeat: no-repeat; /* не повторять картинку */
+    background-position: right; /* перемещаем картинку в право */
+}
+
+.about__box{
+    padding: 33px 40px 33px; /* отступы для текста внутри контейнера */
+    background-color: #fff;
+    max-width: 470px;/* максимальная ширина контейнера где будет лежать текст  */
+    position: relative;
+}
+
+.about__box::after, /* создаем красные обводку текста ФЛАЖКИ*/ 
+.about__box::before{
+    content: "";
+    position: absolute;
+    width: 33px;
+    height: 33px;
+}
+
+.about__box::after{ /* Стили для ФЛАЖКОВ нижних */
+    border-bottom: 2px solid #8C001A; /* обводка */
+    border-right: 2px solid #8C001A;  /* обводка */
+    right: 19px; /* расположение в блоке */
+    bottom: 19px;/* расположение в блоке */
+}
+
+.about__box::before{ /* Стили для ФЛАЖКОВ верхних */
+    border-top: 2px solid #8C001A;
+    border-left: 2px solid #8C001A;  
+    left: 19px;/* расположение в блоке */
+    top: 19px;/* расположение в блоке */
+}
+
+.about__box-title{ /* стили для текста и тайтла для блока  box-title*/
+    font-family: Lato;
+    font-size: 24px;
+    line-height: 25px;
+    color: #505050;
+    margin-bottom: 20px;
+}
+/* обращаемся .about__item к ребенку even-это четность не четные это odd переносим картнку nth-child в лево одну из картинок  */
+.about__item:nth-child(even){
+    background-position: left;
+}
+/* делаем внешние отсупы автоматическими */
+.about__item:nth-child(even) .about__box{
+    margin-left: auto;
+}
+
+/* .about__item:nth-child(even) .about__box::before{
+    right: 19px;
+    left: auto;
+    background-image: none;
+    border-right: 2px solid #8C001A;
+    border-top: 2px solid #8C001A;
+}*/
+
+
+/* .about__item:nth-child(even) .about__box::after{
+    left: 19px;
+    border-right: none;
+    border-left: 2px solid #8C001A;   обводка 
+} 
+ */

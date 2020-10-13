@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- Подключили шрифты с googlу fons сайта  -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- Создаем шапку сайта где банер расположен -->
+        <div class="header__top">
+            <!-- Храниться будет картинка большой банер /картинка/надпись на банере / Два нижних подчеркивания bedname -->
+            <div class="header__top-inner">
+                <!-- Сделали контейнер для обвертки на фото есть маленькая полоса -->
+                <h1 class="header__title">ВИНО</h1><!-- Создаем заголовок для надписи -->
+                <p class="header__text">
+                    <!-- Создаем класс для параграфа с текстом -->
+                    Explore the luxury of Wine & Food
+                </p>
+            </div>
+        </div>
+        <nav class="menu section-line">
+            <!-- Создайм меню насйта под банером -->
+            <ul class="menu__list">
+                <li class="menu__list-item"><a class="menu__list-link" href="#">Summary</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">General</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">Sights</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">Weather</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">What to Do</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">Residential Guide</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="reason">
+        <div class="container section-line">
+            <!-- добавили section-line линию послеконтейнера -->
+            <!-- создаем контейнер в него помещаем все картинки что бы было все центрировать -->
+            <!-- секция для блока текста под банером -->
+            <h2 class="reason__title title">Why you’ll love
+                vacation in Burgundy</h2> <!-- заголовок под блоком банера -->
+            <p class="reason__text container-content">Может быть, нет более прекрасного способа исследовать деревенские
+                деревни
+                вневременной
+                Бургундии, чем с речной баржи на берегу реки Сона. Перемещение от одного ошеломляющего пейзажа до
+                другого,
+                остановка, чтобы бродить по знаменитым виноградникам региона, ездить на велосипедах через его обширные
+                леса
+                и наслаждаться его незабываемым ароматом.</p><!-- текст который базиться под h2 -->
+            <div class="raeson__link container-content"><a href="#">Read more>></a>
+            </div>
+
+            <div class="raeson__statistics container-content">
+                <!-- container-content прописали дополнительно для всего блока иконок что бы ограниить выход -->
+
+                <div class="raeson__statistics-item">
+                    <img class="raeson__statistics-images" src="images/statistics-1.svg" alt="">
+                    <!-- создали путь к изображению и прописашли класс стиля -->
+                    <p class="raeson__statistics-num">1.920</p><!-- создали параграф для цифер -->
+                    <p class="raeson__statistics-text">Trips</p><!-- создали параграф для техта возле цифр -->
+                </div><!-- создали контейнел для картинки -->
+
+                <div class="raeson__statistics-item">
+                    <img class="raeson__statistics-images" src="images/statistics-2.svg" alt="">
+                    <p class="raeson__statistics-num">271</p>
+                    <p class="raeson__statistics-text">Venues</p>
+                </div>
+
+                <div class="raeson__statistics-item">
+                    <img class="raeson__statistics-images" src="images/statistics-3.svg" alt="">
+                    <p class="raeson__statistics-num">3.321</p>
+                    <p class="raeson__statistics-text">Tickets Sold</p>
+                </div>
+
+                <div class="raeson__statistics-item">
+                    <img class="raeson__statistics-images" src="images/statistics-4.svg" alt="">
+                    <p class="raeson__statistics-num">2.921</p>
+                    <p class="raeson__statistics-text">Reviews</p>
+                </div>
+            </div><!-- статистика разбита на 4 блока нахлдиться под текстом -->
+        </div> <!-- контейнер а внем делаем линк читать дальше -->
+        </div>
+    </section>
+    <section class="about"> <!-- создаем секцию для блока после линии -->
+        <div class="container"> <!-- создаем контейнер для текста и заголовка -->
+            <div class="container-content">
+                <h2 class="about__title title">
+                    What Burgundy is about
+                </h2>
+                <p class="about__text">
+                    Две великие французские страсти, вино и еда, собрались здесь в особенно богатой и соблазнительной форме. В 2015 году виноградники Бургундии получили статус ЮНЕСКО в знак признания многовековой истории виноградарства . Сочетая вино и гастрономию, Бургундия будет вдохновлять Вас.
+                </p>
+                <div class="about__item" style="background-image: url('images/about-1.jpg');"> <!-- style прописываем картинка для бекенда выносим для того чтобы в дальнейшем через админку можно было изменять картинку -->
+                    <div class="about__box"> <!-- Контейнер в котром будет текст -->
+                        <h3 class="about__box-title"> <!-- заголовок внутри бокса -->
+                            Route des Grands Crus
+                        </h3>
+                        <p class="about__box-text"> <!-- текст внутри бокса -->
+                            Дорога Гран-Крус «дорога великих вин» пролегает вдоль подножия откоса Кот-д'Ор, от Дижона на севере до Сантене на юге. Таким образом, он проходит через многие из великих наименований бургундских вин, отсюда и название маршрута.
+                        </p>
+                    </div> <!-- белый прямоуголиник в котором будет текст -->
+                </div> <!-- широкий блок для текста и картинки -->
+    
+                <div class="about__item" style="background-image: url('images/about-2.jpg');">
+                    <div class="about__box">
+                        <h3 class="about__box-title">
+                            Heart of French Gastronomy
+                        </h3>
+                        <p class="about__box-text">
+                            Бургундцы увлечены своей едой и вином. Escargots à la Bourgogne, Boeuf Bourguignon и Coq au Vin - это только три из известных региональных блюд. В Бургундии есть 29 ресторанов с известными звездами Мишлен и один с тремя звездами.
+                        </p>
+                    </div> <!-- белый прямоуголиник в котором будет текст -->
+                </div> <!-- широкий блок для текста и картинки -->
+
+            </div>
+        </div>
+    </section>
+    <section class="photo"><!--  создаем контейнер для слайдов -->
+        <div class="container section-line">
+            <h2 class="photo__title title">
+                Burgundy in Photos
+            </h2>
+            <p class="photo__text">Бургундия предлагает одни из самых красивых сельских местностей Франции: это рай для любителей активного отдыха. Вы можете покататься на велосипеде по виноградникам Кот д'Ор, прогуляться по диким окрестностям Национального парка Морван, скользить по водным путям Йонны в лодке канала или плавать над всем этим на воздушном шаре. Любая идея будет прекрасна, чтобы увидеть великолепное архитектурное наследие, которое восходит к эпохе Возрождения и Средневековья.</p>
+            <div class="photo-slider">
+                <img class="photo__img" src="/images/photo-slider.jpg" alt="">
+                <img class="photo__img" src="/images/photo-slider.jpg" alt="">
+                <img class="photo__img" src="/images/photo-slider.jpg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
