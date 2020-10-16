@@ -10,6 +10,9 @@ a { /* обращаемся к ссылкам всем */
     display: inline-block;
 }
 
+ul{
+    list-style: none; /* все ul без точек */
+}
 body { /* прописываем всему body цвет */ 
     color: #3d3131;
     font-family: 'Lato', sans-serif; /* подключили шрифт для всего тела */
@@ -36,6 +39,7 @@ body { /* прописываем всему body цвет */
     align-items: center;
     color: #4E5665;
     text-align: center;
+    font-weight: 400px;
 }
 
 .section-line{
@@ -227,6 +231,35 @@ body { /* прописываем всему body цвет */
     margin-left: auto;
 }
 
+/* .about__item:nth-child(even) .about__box::before{
+    right: 19px;
+    left: auto;
+    background-image: none;
+    border-right: 2px solid #8C001A;
+    border-top: 2px solid #8C001A;
+}
+ */
+
+.about__preview-title{
+    margin-bottom: 38px;
+}
+
+.about__preview-text{
+    margin: 53px auto 80px;
+}
+
+.about__images-box{
+    padding-top: 73px;
+    padding-left: 50%;
+}
+
+.about__dot{ /* создаем точку на бутылке */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(140, 0, 26, .75);
+}
+
 .photo{
     padding: 80px 0;
 }
@@ -254,6 +287,8 @@ body { /* прописываем всему body цвет */
 .photo__slider{ /* что бы работал фотослайдер  */
     max-width: 640px; /*  ширина слайдера */
     margin: 0 auto; 
+    filter: drop-shadow(0px 2px 24px rgba(0, 0, 0, 0.3));
+
 }
 
 .slick-arrow{ /* Стилизуем кнопку стрелку слайдера обращаемся ук стилям которые находятся в папке маин */
@@ -275,4 +310,84 @@ body { /* прописываем всему body цвет */
 
 .slick-next{
     right: 0px;
+}
+
+.footer{ /* стилизируем футер сайта */
+    background: #8C001A; /* цвет блока */
+    padding: 55px 0 32px; /* внутрений отступ блока */
+}
+
+.footer__items{
+    display: flex;
+    justify-content: space-between; /* прибиваем по краям */
+}
+
+.footer_item{ /* прописываем внтри блока ширрину для того если будет длинное назавне блок не рвалс а переносил данные */
+    width: 140px;
+}
+
+.footer__item--blog{
+    width: 300px;
+}
+.footer__item--copmany{
+    padding-left: 8px;
+}
+
+.footer__item-title{
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Все символы текста становятся прописными (верхний регистр). */
+}
+
+.footer__item-list{
+    padding-top: 40px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+}
+
+.footer__item-link--social{ /* прописываем стили иконкам социальным */
+    padding-left: 28px;
+    position: relative;
+}
+
+.footer__item-link--social::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.footer__copy{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+}
+
+.footer__item-link--massage::before{
+background-image: url("../images/cont.svg");
+width: 17px;
+top: 1px;
+}
+.footer__item-link--facebook::before{
+background-image: url("/images/face.svg");
+}
+.footer__item-link--insragram::before{
+background-image: url("/images/instagram-logo.svg");
+}
+.footer__item-link--youtube::before{
+background-image: url("/images/yout.svg");
+}
+.footer__item-link--email::before{
+background-image: url("/images/mail.svg"); 
+height: 13px;
+top: 2px; 
 }
