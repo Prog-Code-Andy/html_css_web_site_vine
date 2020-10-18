@@ -127,11 +127,11 @@ body { /* прописываем всему body цвет */
     border-bottom: 4px solid #8C001A;
 }
 
-.reason{ /* стили для всей секции */
+.raeson{ /* стили для всей секции */
     padding: 80px 0 0; /* отсупы с верху и снизу */
 }
 
-.reason-title{
+.raeson-title{
     margin-bottom: 22px;
 }
 .raeson__link{ /* перемещаем ссылку в правую сторону */
@@ -251,6 +251,7 @@ body { /* прописываем всему body цвет */
 .about__images-box{
     padding-top: 73px;
     padding-left: 50%;
+    position: relative; /* для того чтобы кружки двигать */
 }
 
 .about__dot{ /* создаем точку на бутылке */
@@ -258,6 +259,71 @@ body { /* прописываем всему body цвет */
     height: 32px;
     border-radius: 50%;
     background-color: rgba(140, 0, 26, .75);
+    position: absolute;
+    cursor: pointer;
+} 
+
+.about__dot--1{
+    left: 772px;
+    top: 609px;
+}
+
+.about__dot--2{
+    left: 626px;
+    top: 753px;
+}
+
+.about__dot--3{
+    top: 470px;
+    right: 425px;
+}
+
+
+.about__dot::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #8C001A;
+    top: 50%; /* чтобы кружечек посавить в кружечек  */
+    left: 50%;
+    transform: translate(-50%, -50%);/* чтобы кружечек посавить в кружечек  */
+}
+
+.about__dot::before{ /* ставим линиюкрасную к кружку */
+    content: "";
+    background-image: url("/images/line.svg");
+    width: 244px;
+    height: 122px;
+    top: -102px;
+    left: 15px;
+    position: absolute;
+    display: none; /* делаем для того чтобы при наведении появлялась надпись */
+}
+
+.about__dot:hover::before{ /* при наведении на beforу будет выводиться текст */
+    display: block;
+
+
+}
+
+.about__dot:hover .about__dot-text{ /* при наведении на beforу будет выводиться текст */
+    display: block;
+    
+
+}
+
+.about__dot-text{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    color: #8C001A;
+    position: absolute;
+    white-space: nowrap; /* выравнивает текст в одну линию  и фраза не переносилась*/
+    top: -149px;
+    left: 165px;
+    display: none; /* делаем для того чтобы при наведении появлялась надпись */
 }
 
 .photo{
@@ -282,6 +348,8 @@ body { /* прописываем всему body цвет */
     background-color: rgba(208, 212, 216, .5);
     bottom: 0; /* делаем отступ для линии прижимаем ее к низу*/
     margin: 0 auto; /* поставили линию по центру */
+    left: 0; /* выравняли линию по бокам */
+    right: 0;
 }
 
 .photo__slider{ /* что бы работал фотослайдер  */
@@ -377,17 +445,194 @@ background-image: url("../images/cont.svg");
 width: 17px;
 top: 1px;
 }
+
 .footer__item-link--facebook::before{
 background-image: url("/images/face.svg");
 }
+
 .footer__item-link--insragram::before{
 background-image: url("/images/instagram-logo.svg");
 }
+
 .footer__item-link--youtube::before{
 background-image: url("/images/yout.svg");
 }
+
 .footer__item-link--email::before{
 background-image: url("/images/mail.svg"); 
 height: 13px;
 top: 2px; 
+}
+
+.menu__btn{ /* прописываем скрытие блоку кнопки при десктопной версии если меньше 700 пикселей*/
+    display: none;
+}
+
+.about__images-box img{ /* обращаемся к классу максимальной с картинкой и задаем ему ширину максимальную 100% от экрана для отодражения на мобильной версии */
+    max-width: 100%;
+}
+
+/* *******************
+Делаем Адаптив
+
+******************** */
+@media (max-width: 840px){ 
+    .about__box{/* прописываем для картинок с блюдом под банером */
+        margin: 0 auto;
+    }
+    .about__dot--1 {
+        left: 507px;
+        top: 609px;
+    }
+    .about__dot--3 {
+        top: 474px;
+        right: 189px;
+    }
+    .about__dot--2 {
+        left: 380px;
+        top: 752px;
+    }
+    .about__item{
+        padding: 382px 0 70px;
+        background-position: top;
+        margin-bottom: 0;
+    }
+    .about__item:nth-child(even){ /* поменяли для нижней картинки с left на top что бы выровнять изображение */
+        background-position: top;
+    }
+    .footer__items{
+        flex-wrap: wrap; /* выравниваем все блоки свойством друг под друга */
+    }
+    .footer__item{
+        width: 50%; /* прописываем проценты 50% от данных в контейнере */
+        margin-bottom: 35px; /* отступ от нижнего края  */
+        padding-right: 25px; /* для того что бы если длинный текст не чего не преслонилось не когда */
+    }
+
+}
+
+@media (max-width: 700px){ /*свойство max-width работает на мниторах 700px и меньше для шапки сайта */
+    .header__title{ /* задаем ширину для вино */
+        font-size: 120px;
+        line-height: 150px;
+    }
+    .header__text{ /* задаем для текста */
+        font-size: 20px;
+    }
+    .menu{
+        position: relative;
+    }
+    .menu__btn{
+        display: block;
+        width: 40px;
+        cursor: pointer;
+        position: absolute;
+        right: 40px;
+        top: 10px;
+    }
+
+    .menu__btn span{ /* в мобилке выпадающее меню полоски */
+        display: block;
+        margin-bottom: 5px;
+        background-color: #8C001A;
+        height: 4px;
+    }
+    .menu__list{ /* Сдесь должен скрываться меню лист при размере уменьшеном в мобилку уходит с дестоп версии меню */
+        display: none;
+        padding-top: 40px;
+        text-align: center; /* выравниваем текст по середине выпадающего меню */
+        border-bottom: 4px solid #8C001A;
+    }
+    .menu__list-link{
+        display: block;/*  Деваем в выпадающем меню ссылкам на категории блок с линией подчеркивания */
+        border-top: 4px solid #8C001A;
+    }
+    .menu__list-link:hover{ /* свойства когда наводим курсор будет меняться класс */
+        border-bottom: none;
+    }
+    .slick-next{
+        right: 20px;
+    }
+    .slick-prev{
+        left: 20px;
+    }
+
+}
+
+@media (max-width: 540px){ /* для шапки сайта */
+    .header__text{
+        display: none;
+    }
+    .header__title{ /* задаем ширину для вино */
+        font-size: 80px;
+        line-height: 110px;
+    }
+    .header__top-inner{
+        border: 2px solid #8C001A;
+    }
+    .header__title{
+        font-size: 100px;
+    }
+    .title{ /* сделали текст под банером меньше */
+        font-size: 24px;
+        line-height: 28px;
+    }
+    body{
+        font-size: 15px;
+        line-height: 24px;
+    }
+    .raeson__statistics{ /* прописываем стили для картинок после текста они становятся в ряд друг за другом*/
+        display: block;
+    }
+    .reason{
+        padding-top: 37px;
+
+    }
+    .raeson__statistics-item{ /* прописываем стили для картинок после текста */
+        margin-bottom: 35px;
+    }
+    .about__dot--1 {
+        left: 358px;
+        top: 464px;
+    }
+    .about__dot--3 {
+        top: 357px;
+        right: 121px;
+    }
+    .about__dot--2 {
+        left: 280px;
+        top: 590px;
+    }
+}
+@media (max-width: 470px){ 
+    .footer__items{
+        display: block; /* прописываем дисплею состояние блока */
+
+    }
+    .footer__item{
+        width: 100%;
+        padding-right: 0;
+    }
+
+}
+@media (max-width: 410px){ /* для шапки сайта */
+    .header__title{ /* задаем ширину для вино */
+        font-size: 60px;
+        line-height: 80px;
+    }
+    .header__top{
+        padding: 9px;
+    }
+    .about__dot{ /* убираем точки красные на бутылке */
+        display: none;
+    }
+    .about__images-box{
+        padding-top: 0;
+    }
+}    
+
+@media (min-width: 700px){ /* раблотает на мониторах больше 700 пикселей */
+    .menu__list{
+        display: flex !important;
+    }
 }
